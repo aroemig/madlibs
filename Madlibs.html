@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Mad Lib</title>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+		<link rel="stylesheet" href="css/normalize.css">
+		<link rel="stylesheet" href="css/style.css">
+		<meta name="viewport" content="width=device-width">
+	</head>
+	<body>
+
+		<h1 id="xForY"></h1>
+
+		<div id="inputs">
+			<button id="create">Create New Startup</button>
+			<button id="save">Favorite Startup</button>
+		</div>
+
+		<h2>favorites</h2>
+			
+			<ul id = 'favorites' >
+
+			</ul>
+
+		
+		<script src='http://code.jquery.com/jquery-latest.min.js'></script>
+		<script src="js/app.js"></script>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+
+		<script> 
+			var startups = ['Uber', 'Google', 'Amazon', 'Apple', 'Facebook', 'Twitter', 'Slack', 'Trello', 'Tesla', 'Hyperloop', 'Harvest'];
+			var groups = ['farmers', 'astronauts', 'children', 'programmers', 'students', 'dogs', 'teachers'];
+			
+			var random1 = Math.floor((Math.random() * startups.length));
+			var random2 = Math.floor((Math.random() * groups.length));
+
+			var randomStartUpIdea = 'A startup that is ' + startups[random1] + ', but for ' + groups[random2];
+
+				$('#xForY').html(randomStartUpIdea)
+
+			$('#create').on('click', function(event) {
+				var startups = ['Uber', 'Google', 'Amazon', 'Apple', 'Facebook', 'Twitter', 'Slack', 'Trello', 'Tesla', 'Hyperloop', 'Harvest'];
+				var groups = ['farmers', 'astronauts', 'children', 'programmers', 'students', 'dogs', 'teachers'];
+				
+				var random1 = Math.floor((Math.random() * startups.length));
+				var random2 = Math.floor((Math.random() * groups.length));
+
+				var randomStartUpIdea = 'A startup that is ' + startups[random1] + ', but for ' + groups[random2];
+
+				$('#xForY').html(randomStartUpIdea)
+			})
+
+			//write psedu code!!  
+			//see if make it so can't add same favorite twice
+			//call function so don't duplicate code
+
+
+			$('#save').on('click', function(event) {
+
+				var text = $('#xForY').text()
+				$('#favorites').append('<li>' + text +' </li>')
+
+
+				//grab startup test, telas ect.. put in this list use jquery
+				})
+		  </script>
+
+
+	</body>
+</html>
